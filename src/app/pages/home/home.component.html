@@ -1,0 +1,36 @@
+<h1 class="title">Todo List</h1>
+<div class="search">
+  <div class="search__input">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput [formControl]="formsSearch">
+    </mat-form-field>
+  </div>
+  <div class="search__button">
+    <button mat-raised-button color="primary" class="search__button-btn" (click)="openDialog()">Add Card</button>
+  </div>
+</div>
+<div class="header">
+  <button class="header-btn" mat-raised-button color="warn" (click)="deleteSuccess()">Удалить Выполнение</button>
+  <button class="header-btn" mat-raised-button color="primary" (click)="updateSuccess()">Все Выполнение</button>
+  <button class="header-btn" mat-raised-button color="warn" (click)="deleteAll()">Удалить все</button>
+</div>
+<div cdkDropListGroup>
+  <div class="example-container">
+    <div
+      cdkDropListOrientation="horizontal"
+      cdkDropList
+      [cdkDropListData]="arrayCard"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <mat-card class="example-card"  *ngFor="let card of arrayCard | search: search " [ngStyle]="{'backgroundColor': cardColor(card)}" cdkDrag (click)="cardDetail(card)">
+        <mat-card-title class="example-card__title">{{card.nameCard}}</mat-card-title>
+        <mat-card-title class="example-card__title">{{cartText(card)}}</mat-card-title>
+        <mat-card-actions class="example-card__btn">
+          <button mat-raised-button color="primary" (click)="updateCard(card)">{{card.status.status}}</button>
+          <button mat-raised-button color="warn" (click)="deleteCard(card)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

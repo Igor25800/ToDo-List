@@ -1,0 +1,17 @@
+<form [formGroup]="todoList">
+  <mat-form-field class="example-full-width width" appearance="fill">
+    <mat-label>Name Card</mat-label>
+    <input matInput formControlName="nameCard">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="width">
+    <mat-label>Favorite food</mat-label>
+    <mat-select formControlName="status">
+      <mat-option *ngFor="let food of foods" [value]="food">
+        {{food.status}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="button" mat-raised-button color="primary" class="width" (click)="addCard()">Add</button>
+</form>
+
+
