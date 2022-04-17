@@ -24,7 +24,6 @@ import {FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     SharedModule,
     DragDropModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
@@ -34,7 +33,8 @@ import {FormsModule} from "@angular/forms";
     FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 
 export class AppModule { }

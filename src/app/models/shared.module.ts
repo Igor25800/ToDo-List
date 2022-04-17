@@ -22,6 +22,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule
+
   ],
   exports: [
     MatInputModule,
@@ -30,7 +31,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatDialogModule,
     MatCardModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalAddComponent
   ]
 })
 export class SharedModule { }
